@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostoProtocol.h"
 
-@interface PostosViewController : UITableViewController
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *editar;
+@interface PostosViewController : UITableViewController <PostoProtocol>
 
 @end

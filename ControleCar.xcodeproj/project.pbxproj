@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077F2FAD1D7A504A00BDCF28 /* PostosFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077F2FAB1D7A504A00BDCF28 /* PostosFormViewController.m */; };
 		07C6F0BA1D62A24A0007323E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6F0B91D62A24A0007323E /* main.m */; };
 		07C6F0BD1D62A24A0007323E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6F0BC1D62A24A0007323E /* AppDelegate.m */; };
 		07C6F0C61D62A24A0007323E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C6F0C41D62A24A0007323E /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		07C6F0CB1D62A24A0007323E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C6F0C91D62A24A0007323E /* LaunchScreen.storyboard */; };
 		07C6F0D61D62A24B0007323E /* ControleCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6F0D51D62A24B0007323E /* ControleCarTests.m */; };
 		07C6F0E11D62A24B0007323E /* ControleCarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6F0E01D62A24B0007323E /* ControleCarUITests.m */; };
+		07E0650B1D764C6C00503488 /* PostosEditarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E0650A1D764C6C00503488 /* PostosEditarController.m */; };
 		07EF976F1D6D1F1D004EE69B /* Posto.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EF976E1D6D1F1D004EE69B /* Posto.m */; };
 		07EF97711D6D224C004EE69B /* postos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07EF97701D6D224C004EE69B /* postos.plist */; };
 		07EFA4691D67F67100BDD1F8 /* PostosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EFA4681D67F67100BDD1F8 /* PostosViewController.m */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		077F2FAA1D7A504A00BDCF28 /* PostosFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostosFormViewController.h; sourceTree = "<group>"; };
+		077F2FAB1D7A504A00BDCF28 /* PostosFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostosFormViewController.m; sourceTree = "<group>"; };
 		07C6F0B51D62A2490007323E /* ControleCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControleCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C6F0B91D62A24A0007323E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07C6F0BB1D62A24A0007323E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,9 @@
 		07C6F0DC1D62A24B0007323E /* ControleCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControleCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C6F0E01D62A24B0007323E /* ControleCarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControleCarUITests.m; sourceTree = "<group>"; };
 		07C6F0E21D62A24B0007323E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07E065091D764C6C00503488 /* PostosEditarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostosEditarController.h; sourceTree = "<group>"; };
+		07E0650A1D764C6C00503488 /* PostosEditarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostosEditarController.m; sourceTree = "<group>"; };
+		07E0650C1D764E8600503488 /* PostoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostoProtocol.h; sourceTree = "<group>"; };
 		07EF976D1D6D1F1D004EE69B /* Posto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Posto.h; sourceTree = "<group>"; };
 		07EF976E1D6D1F1D004EE69B /* Posto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Posto.m; sourceTree = "<group>"; };
 		07EF97701D6D224C004EE69B /* postos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = postos.plist; sourceTree = "<group>"; };
@@ -106,8 +113,13 @@
 		07C6F0B71D62A24A0007323E /* ControleCar */ = {
 			isa = PBXGroup;
 			children = (
+				07E0650C1D764E8600503488 /* PostoProtocol.h */,
 				07EFA4671D67F67100BDD1F8 /* PostosViewController.h */,
 				07EFA4681D67F67100BDD1F8 /* PostosViewController.m */,
+				07E065091D764C6C00503488 /* PostosEditarController.h */,
+				07E0650A1D764C6C00503488 /* PostosEditarController.m */,
+				077F2FAA1D7A504A00BDCF28 /* PostosFormViewController.h */,
+				077F2FAB1D7A504A00BDCF28 /* PostosFormViewController.m */,
 				07C6F0C41D62A24A0007323E /* Main.storyboard */,
 				07C6F0C91D62A24A0007323E /* LaunchScreen.storyboard */,
 				07C6F0BB1D62A24A0007323E /* AppDelegate.h */,
@@ -298,7 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E0650B1D764C6C00503488 /* PostosEditarController.m in Sources */,
 				07EFA4691D67F67100BDD1F8 /* PostosViewController.m in Sources */,
+				077F2FAD1D7A504A00BDCF28 /* PostosFormViewController.m in Sources */,
 				07C6F0BD1D62A24A0007323E /* AppDelegate.m in Sources */,
 				07C6F0BA1D62A24A0007323E /* main.m in Sources */,
 				07EF976F1D6D1F1D004EE69B /* Posto.m in Sources */,
