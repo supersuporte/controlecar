@@ -1,5 +1,5 @@
 //
-//  PostoProtocol.h
+//  PostoFormProtocol.h
 //  ControleCar
 //
 //  Created by Carlos Gomes on 30/08/16.
@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Posto.h"
 
-@protocol PostoProtocol <NSObject>
+@protocol PostoFormProtocol <NSObject>
 
-//- (void)postoAdicionado:(Posto *)posto;
-
-//- (void)postoAlteradoComSucesso;
+- (NSString *)titulo;
+- (UIBarButtonItem *)botaoDireito;
+- (void)acaoBotaoDireito;
 
 @end
