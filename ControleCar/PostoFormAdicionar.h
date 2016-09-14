@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PostoFormProtocol.h"
+#import "Posto.h"
 
 @interface PostoFormAdicionar : NSObject<PostoFormProtocol>
+@property(strong, nonatomic) Posto *posto;
 
 @end

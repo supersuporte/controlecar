@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "PostoFormProtocol.h"
 
 @interface PostoFormEditar : NSObject<PostoFormProtocol>
 
+@property (strong, nonatomic) Posto *posto;
+
+- (id)initWithPosto:(Posto *)posto;
+
 - (NSString *)titulo;
-- (UIBarButtonItem *)botaoDireito;
-- (void)acaoBotaoDireito;
+- (NSString *)tituloDoBotaoDireito;
 
 @end

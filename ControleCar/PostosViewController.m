@@ -10,6 +10,7 @@
 #import "Posto.h"
 #import "PostoFormAdicionar.h"
 #import "PostoFormEditar.h"
+#import "PostoFormViewController.h"
 
 @interface PostosViewController () {
     NSMutableArray *postos;
@@ -111,22 +112,28 @@
     return cell;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"postoForm" sender:indexPath];
 }
 
--  (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *i = sender;
-    
-    if (i.section == 0) {
-        PostoFormAdicionar *postoForm = [[PostoFormAdicionar alloc] init];
-        [segue.destinationViewController setDelegate:postoForm];
-    } else {
-        PostoFormEditar *postoForm = [[PostoFormEditar alloc] init];
-        [segue.destinationViewController setDelegate:postoForm];
+    Posto *posto = [postos objectAtIndex:[i row]];
+
+    if ([[segue identifier] isEqualToString:@"postoForm"]) {
+        PostoFormViewController *postoVC = [segue destinationViewController];
+        postoVC.delegate = self;
+
+        if (i.section == 0) {
+            PostoFormAdicionar *postoForm = [[PostoFormAdicionar alloc] init];
+            postoVC.postoForm = postoForm;
+        } else {
+            PostoFormEditar *postoForm = [[PostoFormEditar alloc] initWithPosto:posto];
+            postoVC.postoForm = postoForm;
+        }
     }
+    
 }
 
 @end

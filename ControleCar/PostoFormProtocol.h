@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Posto.h"
 
 @protocol PostoFormProtocol <NSObject>
 
+@property(strong, nonatomic) Posto *posto;
+
 - (NSString *)titulo;
-- (UIBarButtonItem *)botaoDireito;
-- (void)acaoBotaoDireito;
+- (NSString *)tituloDoBotaoDireito;
+- (SEL)acaoDoBotaoDireito;
 
 @end

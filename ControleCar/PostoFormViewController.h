@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostoProtocol.h"
 #import "PostoFormProtocol.h"
 
 @interface PostoFormViewController : UITableViewController
 
-@property (strong, nonatomic) id<PostoFormProtocol> delegate;
+@property (strong, nonatomic) id<PostoProtocol> delegate;
+@property (strong, nonatomic) NSObject<PostoFormProtocol> *postoForm;
 
 @property (weak, nonatomic) IBOutlet UITextField *descricao;
-@property (weak, nonatomic) IBOutlet UITextField *status;
+@property (weak, nonatomic) IBOutlet UISwitch *status;
 
 @end

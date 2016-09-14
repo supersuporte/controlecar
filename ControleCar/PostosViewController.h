@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostoProtocol.h"
 
-@interface PostosViewController : UITableViewController
+@interface PostosViewController : UITableViewController <PostoProtocol>
 
 @end

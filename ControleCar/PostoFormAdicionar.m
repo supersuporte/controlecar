@@ -9,6 +9,7 @@
 #import "PostoFormAdicionar.h"
 
 @implementation PostoFormAdicionar
+@synthesize posto;
 
 - (NSString *)titulo {
     return @"Adicionar Posto";

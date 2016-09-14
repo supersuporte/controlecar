@@ -9,19 +9,37 @@
 #import "PostoFormEditar.h"
 
 @implementation PostoFormEditar
+@synthesize posto;
+
+- (id)initWithPosto:(Posto *)_posto {
+    if (self) {
+        self.posto = _posto;
+    }
+    return self;
+}
 
 - (NSString *)titulo {
     return @"Editar Posto";
 }
 
-- (UIBarButtonItem *)botaoDireito {
+- (NSString *)tituloDoBotaoDireito {
+    return @"Alterar";
+}
+
+- (SEL)acaoDoBotaoDireito {
+    return NSSelectorFromString(@"alterar");
+}
+
+/*
+- (UIBarButtonItem *)botaoDireito:(Posto *)_posto {
     UIBarButtonItem *botao = [[UIBarButtonItem alloc] initWithTitle:@"Alterar" style:UIBarButtonItemStylePlain target:self action:@selector(acaoBotaoDireito)];
 
     return botao;
 }
 
 - (void)acaoBotaoDireito {
-    
+    [nc.destinationViewController.navigationController popViewControllerAnimated:YES];
 }
+*/
 
 @end

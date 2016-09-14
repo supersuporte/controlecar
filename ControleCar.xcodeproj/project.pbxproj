@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		077CC31F1D88DAFA002374AF /* PostoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostoProtocol.h; sourceTree = "<group>"; };
 		07C6F0B51D62A2490007323E /* ControleCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControleCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C6F0B91D62A24A0007323E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07C6F0BB1D62A24A0007323E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,13 +119,14 @@
 			children = (
 				07EFA4671D67F67100BDD1F8 /* PostosViewController.h */,
 				07EFA4681D67F67100BDD1F8 /* PostosViewController.m */,
+				07C7AD991D84451E002766AA /* PostoFormViewController.h */,
+				07C7AD9A1D84451E002766AA /* PostoFormViewController.m */,
+				077CC31F1D88DAFA002374AF /* PostoProtocol.h */,
+				07E0650C1D764E8600503488 /* PostoFormProtocol.h */,
 				07C7ADA41D84880D002766AA /* PostoFormAdicionar.h */,
 				07C7ADA51D84880D002766AA /* PostoFormAdicionar.m */,
 				07C7ADA11D847692002766AA /* PostoFormEditar.h */,
 				07C7ADA21D847692002766AA /* PostoFormEditar.m */,
-				07C7AD991D84451E002766AA /* PostoFormViewController.h */,
-				07C7AD9A1D84451E002766AA /* PostoFormViewController.m */,
-				07E0650C1D764E8600503488 /* PostoFormProtocol.h */,
 				07C6F0C41D62A24A0007323E /* Main.storyboard */,
 				07C6F0C91D62A24A0007323E /* LaunchScreen.storyboard */,
 				07C6F0BB1D62A24A0007323E /* AppDelegate.h */,

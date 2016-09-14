@@ -15,17 +15,45 @@
 
 @implementation PostoFormViewController
 @synthesize delegate;
+@synthesize postoForm;
+
 @synthesize descricao;
 @synthesize status;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = delegate.titulo;
-    self.navigationItem.rightBarButtonItem = delegate.botaoDireito;
+    self.title = postoForm.titulo;
+    self.navigationItem.rightBarButtonItem = [self botaoDireito];
+    
+    //[self preencheFormulario];
 }
 
-- (void)acaoBotaoDireito {
-    [delegate acaoBotaoDireito];
+- (UIBarButtonItem *)botaoDireito {
+    
+    NSString *titulo = [postoForm tituloDoBotaoDireito];
+    SEL selector = [postoForm acaoDoBotaoDireito];
+    
+    UIBarButtonItem *botao = [[UIBarButtonItem alloc] initWithTitle:titulo style:UIBarButtonItemStylePlain target:self action:selector];
+
+    return botao;
 }
 
+- (void)alterar {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+/*
+- (void)preencheFormulario {
+    [descricao setText:delegate.posto.descricao];
+    
+    if ([delegate.posto.status isEqualToString:@"A"]) {
+        [status setOn:TRUE];
+    } else {
+        [status setOn:FALSE];
+    }
+}
+*/
+ 
 @end
