@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Posto.h"
 
 @protocol PostoProtocol <NSObject>
+
+- (void)postoAdicionado:(Posto *)posto;
+- (void)postoAlterado;
 
 @end

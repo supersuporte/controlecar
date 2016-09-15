@@ -8,8 +8,6 @@
 
 #import "PostosViewController.h"
 #import "Posto.h"
-#import "PostoFormAdicionar.h"
-#import "PostoFormEditar.h"
 #import "PostoFormViewController.h"
 
 @interface PostosViewController () {
@@ -24,6 +22,7 @@
     [super viewDidLoad];
     [self carregaPlist];
     
+    self.editButtonItem.title = @"Editar";
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
@@ -59,29 +58,6 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [postos removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return false;
-    } else {
-        return true;
-    }
-    
-}
-
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    Posto *p = [postos objectAtIndex:sourceIndexPath.row];
-    [postos removeObjectAtIndex:sourceIndexPath.row];
-    [postos insertObject:p atIndex:destinationIndexPath.row];
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -99,7 +75,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     if (indexPath.section == 0) {
@@ -107,33 +83,87 @@
     } else {
         Posto *posto = [postos objectAtIndex:[indexPath row]];
         cell.textLabel.text = [posto descricao];
+        cell.detailTextLabel.text = [posto.status isEqualToString:@"A"] ? @"Ativo" : @"Cancelado";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-
+    
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return false;
+    } else {
+        return true;
+    }
+    
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [postos removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self gravaPlist];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    Posto *p = [postos objectAtIndex:sourceIndexPath.row];
+    [postos removeObjectAtIndex:sourceIndexPath.row];
+    [postos insertObject:p atIndex:destinationIndexPath.row];
+    [self gravaPlist];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"postoForm" sender:indexPath];
+    [self performSegueWithIdentifier:@"postoFormViewController" sender:indexPath];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *i = sender;
-    Posto *posto = [postos objectAtIndex:[i row]];
+    NSIndexPath *indexPath = sender;
 
-    if ([[segue identifier] isEqualToString:@"postoForm"]) {
-        PostoFormViewController *postoVC = [segue destinationViewController];
-        postoVC.delegate = self;
-
-        if (i.section == 0) {
-            PostoFormAdicionar *postoForm = [[PostoFormAdicionar alloc] init];
-            postoVC.postoForm = postoForm;
+    PostoFormViewController *postoVC = [segue destinationViewController];
+    postoVC.delegate = self;
+    
+    if ([[segue identifier] isEqualToString:@"postoFormViewController"]) {
+        if (indexPath.section == 0) {
+            postoVC.editMode = NO;
         } else {
-            PostoFormEditar *postoForm = [[PostoFormEditar alloc] initWithPosto:posto];
-            postoVC.postoForm = postoForm;
+            postoVC.editMode = YES;
+            postoVC.posto = [postos objectAtIndex:[indexPath row]];
         }
     }
     
+}
+
+- (void)postoAdicionado:(Posto *)posto {
+    [postos addObject:posto];
+    [self.tableView reloadData];
+    [self gravaPlist];
+}
+
+- (void)postoAlterado {
+    [self.tableView reloadData];
+    [self gravaPlist];
+}
+
+- (void)gravaPlist {
+    NSMutableDictionary *listaDePostos = [[NSMutableDictionary alloc] init];
+    
+    for (int i = 0; i < postos.count; i++) {
+        Posto *posto = [postos objectAtIndex:i];
+        NSMutableDictionary *d = [[NSMutableDictionary alloc] init];
+        
+        [d setValue:[posto descricao] forKey:@"descricao"];
+        [d setValue:[posto status] forKey:@"status"];
+        
+        [listaDePostos setValue:d forKey:[NSString stringWithFormat:@"%i", i]];
+    }
+    
+    NSString *caminho = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *arquivo = [NSString stringWithFormat:@"%@/postos.plist", caminho];
+    [listaDePostos writeToFile:arquivo atomically:YES];
 }
 
 @end
