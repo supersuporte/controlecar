@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070B9EB61D9FFC7E00AA0DB1 /* combustiveis.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070B9EB51D9FFC7E00AA0DB1 /* combustiveis.plist */; };
+		070B9EB91D9FFF3E00AA0DB1 /* Combustivel.m in Sources */ = {isa = PBXBuildFile; fileRef = 070B9EB81D9FFF3E00AA0DB1 /* Combustivel.m */; };
+		070B9EBC1DA001FB00AA0DB1 /* Abastecimento.m in Sources */ = {isa = PBXBuildFile; fileRef = 070B9EBB1DA001FB00AA0DB1 /* Abastecimento.m */; };
+		070B9EBE1DA0023400AA0DB1 /* abastecimentos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070B9EBD1DA0023400AA0DB1 /* abastecimentos.plist */; };
+		070B9EC11DA009B700AA0DB1 /* AbastecimentoFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070B9EC01DA009B700AA0DB1 /* AbastecimentoFormViewController.m */; };
 		07C6F0BA1D62A24A0007323E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6F0B91D62A24A0007323E /* main.m */; };
 		07C6F0BD1D62A24A0007323E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6F0BC1D62A24A0007323E /* AppDelegate.m */; };
 		07C6F0C61D62A24A0007323E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C6F0C41D62A24A0007323E /* Main.storyboard */; };
@@ -38,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070B9EB51D9FFC7E00AA0DB1 /* combustiveis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = combustiveis.plist; sourceTree = "<group>"; };
+		070B9EB71D9FFF3E00AA0DB1 /* Combustivel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Combustivel.h; sourceTree = "<group>"; };
+		070B9EB81D9FFF3E00AA0DB1 /* Combustivel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Combustivel.m; sourceTree = "<group>"; };
+		070B9EBA1DA001FB00AA0DB1 /* Abastecimento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Abastecimento.h; sourceTree = "<group>"; };
+		070B9EBB1DA001FB00AA0DB1 /* Abastecimento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Abastecimento.m; sourceTree = "<group>"; };
+		070B9EBD1DA0023400AA0DB1 /* abastecimentos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = abastecimentos.plist; sourceTree = "<group>"; };
+		070B9EBF1DA009B700AA0DB1 /* AbastecimentoFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbastecimentoFormViewController.h; sourceTree = "<group>"; };
+		070B9EC01DA009B700AA0DB1 /* AbastecimentoFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbastecimentoFormViewController.m; sourceTree = "<group>"; };
 		077CC31F1D88DAFA002374AF /* PostoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostoProtocol.h; sourceTree = "<group>"; };
 		07C6F0B51D62A2490007323E /* ControleCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControleCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C6F0B91D62A24A0007323E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +125,8 @@
 			children = (
 				07EFA4671D67F67100BDD1F8 /* PostosViewController.h */,
 				07EFA4681D67F67100BDD1F8 /* PostosViewController.m */,
+				070B9EBF1DA009B700AA0DB1 /* AbastecimentoFormViewController.h */,
+				070B9EC01DA009B700AA0DB1 /* AbastecimentoFormViewController.m */,
 				07C7AD991D84451E002766AA /* PostoFormViewController.h */,
 				07C7AD9A1D84451E002766AA /* PostoFormViewController.m */,
 				077CC31F1D88DAFA002374AF /* PostoProtocol.h */,
@@ -157,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				07C6F0CC1D62A24A0007323E /* Info.plist */,
+				070B9EBD1DA0023400AA0DB1 /* abastecimentos.plist */,
+				070B9EB51D9FFC7E00AA0DB1 /* combustiveis.plist */,
 				07EF97701D6D224C004EE69B /* postos.plist */,
 			);
 			name = Plists;
@@ -165,6 +182,10 @@
 		07EF97731D6D29B1004EE69B /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
+				070B9EBA1DA001FB00AA0DB1 /* Abastecimento.h */,
+				070B9EBB1DA001FB00AA0DB1 /* Abastecimento.m */,
+				070B9EB71D9FFF3E00AA0DB1 /* Combustivel.h */,
+				070B9EB81D9FFF3E00AA0DB1 /* Combustivel.m */,
 				07EF976D1D6D1F1D004EE69B /* Posto.h */,
 				07EF976E1D6D1F1D004EE69B /* Posto.m */,
 			);
@@ -277,9 +298,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070B9EBE1DA0023400AA0DB1 /* abastecimentos.plist in Resources */,
 				07C6F0CB1D62A24A0007323E /* LaunchScreen.storyboard in Resources */,
 				07C6F0C81D62A24A0007323E /* Assets.xcassets in Resources */,
 				07EF97711D6D224C004EE69B /* postos.plist in Resources */,
+				070B9EB61D9FFC7E00AA0DB1 /* combustiveis.plist in Resources */,
 				07C6F0C61D62A24A0007323E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +330,10 @@
 			files = (
 				07EFA4691D67F67100BDD1F8 /* PostosViewController.m in Sources */,
 				07C6F0BD1D62A24A0007323E /* AppDelegate.m in Sources */,
+				070B9EC11DA009B700AA0DB1 /* AbastecimentoFormViewController.m in Sources */,
 				07C6F0BA1D62A24A0007323E /* main.m in Sources */,
+				070B9EB91D9FFF3E00AA0DB1 /* Combustivel.m in Sources */,
+				070B9EBC1DA001FB00AA0DB1 /* Abastecimento.m in Sources */,
 				07EF976F1D6D1F1D004EE69B /* Posto.m in Sources */,
 				07C7AD9C1D84451E002766AA /* PostoFormViewController.m in Sources */,
 			);

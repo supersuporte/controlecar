@@ -40,13 +40,18 @@
 }
 
 - (void)adicionarPosto {
-    Posto *novoPosto = [[Posto alloc]init];
+    if ([descricao.text isEqualToString:@""]) {
+        [self alerta:@"Alerta" mensagem:@"Por favor, preencha o nome do posto."];
+        
+    } else {
+        Posto *novoPosto = [[Posto alloc]init];
     
-    [novoPosto setDescricao:descricao.text];
-    [novoPosto setStatus:(status.isOn ? @"A" : @"C")];
+        [novoPosto setDescricao:descricao.text];
+        [novoPosto setStatus:(status.isOn ? @"A" : @"C")];
     
-    [delegate postoAdicionado:novoPosto];
-    [self.navigationController popViewControllerAnimated:YES];
+        [delegate postoAdicionado:novoPosto];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)preparaParaEdicao {
@@ -59,11 +64,31 @@
 }
 
 - (void)alterarPosto {
-    [posto setDescricao:descricao.text];
-    [posto setStatus:(status.isOn ? @"A" : @"C")];
+    if ([descricao.text isEqualToString:@""]) {
+        [self alerta:@"Alerta" mensagem:@"Por favor, preencha o nome do posto."];
     
-    [delegate postoAlterado];
-    [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [posto setDescricao:descricao.text];
+        [posto setStatus:(status.isOn ? @"A" : @"C")];
+    
+        [delegate postoAlterado];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void)alerta:(NSString *)titulo mensagem: (NSString *)mensagem {
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:titulo
+                                message:mensagem
+                                preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *okButton = [UIAlertAction
+                               actionWithTitle:@"Ok"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                               }];
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)preencheFormulario {

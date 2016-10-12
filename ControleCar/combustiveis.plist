@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Gasolina</key>
+	<dict>
+		<key>codigo</key>
+		<integer>1</integer>
+		<key>descricao</key>
+		<string>Gasolina</string>
+		<key>status</key>
+		<string>A</string>
+	</dict>
+	<key>Alcool</key>
+	<dict>
+		<key>codigo</key>
+		<integer>2</integer>
+		<key>descricao</key>
+		<string>Álcool</string>
+		<key>status</key>
+		<string>A</string>
+	</dict>
+	<key>Diesel</key>
+	<dict>
+		<key>codigo</key>
+		<integer>3</integer>
+		<key>descricao</key>
+		<string>Diesel</string>
+		<key>status</key>
+		<string>A</string>
+	</dict>
+	<key>GNV</key>
+	<dict>
+		<key>codigo</key>
+		<integer>4</integer>
+		<key>descricao</key>
+		<string>GNV</string>
+		<key>status</key>
+		<string>A</string>
+	</dict>
+</dict>
+</plist>
